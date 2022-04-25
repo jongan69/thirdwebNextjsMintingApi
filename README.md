@@ -27,6 +27,7 @@ PRIVATE_KEY=<Private Key of Wallet that signed Contract>
 NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=<thirdweb Edition Contract address>
 `
 ### API Calls
+
 - POST: Posts an NFT collection to 
 
 {
@@ -50,11 +51,11 @@ NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=<thirdweb Edition Contract address>
     }
 }
 
-EndPoint: 
+EndPoint: https://thirdweb-nextjs-minting-1nhadqwxi-jongan69.vercel.app/api/mint
 Etherscan: 
 
 - GET: Returns all NFT's in contract
-
+EndPoint: https://thirdweb-nextjs-minting-1nhadqwxi-jongan69.vercel.app/api/getNfts
 ### Resources
 
 - [Official Thirdweb Docs](https://docs.thirdeb.com)
