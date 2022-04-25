@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
           rpcUrl: process.env.NEXT_PUBLIC_RPC_URL,
         },
       }}
-      desiredChainId={ChainId.Rinkeby}
+      desiredChainId={4}
     >
       <Component {...pageProps} />
     </ThirdwebProvider>
