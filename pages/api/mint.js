@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 
 export default async function mint(req, res){
 
-  // Address of the wallet you want to mint the NFT to & Supply
+// Address of the wallet you want to mint the NFT to, the NFT's metadata & Supply
   const { mintToAddress, metadata, supply } = req.body
 
   const sdk = new ThirdwebSDK(
@@ -14,7 +14,7 @@ export default async function mint(req, res){
   );
   const editionAddress = process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS;
   const edition = sdk.getEdition(editionAddress);
-  console.log('DATA RECIECVED WAS: ', mintToAddress, metadata)
+  console.log('DATA RECIECVED WAS: ', mintToAddress, metadata, supply)
 
     try {
       const metadataWithSupply = {
@@ -22,18 +22,16 @@ export default async function mint(req, res){
         supply, 
       }
       
-      const tx = await edition.mintTo(mintToAddress, metadataWithSupply)
-      .then(async(tx) => {
-        const receipt = tx.receipt; // the transaction receipt
-        const tokenId = tx.id; // the id of the NFT minted
-        const nft = await tx.data(); // (optional) fetch details of minted NFT(nft);
-        console.log('DATA OUTPUT: ', receipt, tokenId, nft)
-        if (nft) {
-          res.status(200).json({ NFT_MINTED: nft?.metadata })
-        } else {
-          res.status(200).json({ message: `Nft is being minted to contract ${process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS}` })
-        }
-      })
+      const tx = await edition.mintTo(mintToAddress, metadataWithSupply);
+      const receipt = tx.receipt; // the transaction receipt
+      const tokenId = tx.id; // the id of the NFT minted
+      const nft = await tx.data(); // (optional) fetch details of minted NFT(nft);
+      console.log('DATA OUTPUT: ', receipt, tokenId, nft)
+
+      if (nft) {
+        res.status(200).json({ mint_NFT: nft?.metadata })
+      }
+
 
     } catch (error) {
       console.log(error);
