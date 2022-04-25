@@ -1,18 +1,14 @@
 import { ThirdwebProvider, ChainId } from "@thirdweb-dev/react";
 import "../styles/globals.css";
 
+// ChainId.Rinkeby = 4
 function MyApp({ Component, pageProps }) {
 
   return (
     <ThirdwebProvider
       sdkOptions={{
-        gasless: {
-          openzeppelin: {
-            relayerUrl: process.env.NEXT_PUBLIC_OPENZEPPELIN_URL,
-          },
-        },
         readonlySettings: {
-          chainId: ChainId.Rinkeby,
+          chainId: 4,
           rpcUrl: process.env.NEXT_PUBLIC_RPC_URL,
         },
       }}
