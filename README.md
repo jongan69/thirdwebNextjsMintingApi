@@ -30,6 +30,8 @@ NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=<thirdweb Edition Contract address>
 
 - POST: Posts an NFT collection to the contract
 
+Example Body:  
+
 {
     "image": {
         "name": "Bed2",
@@ -51,11 +53,16 @@ NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=<thirdweb Edition Contract address>
     }
 }
 
+
 EndPoint: https://thirdweb-nextjs-minting-1nhadqwxi-jongan69.vercel.app/api/mint
-Etherscan: 
+
+Etherscan: https://rinkeby.etherscan.io/address/0x4f29FbeE650c3eA006a174547a2F4e74c02a2Be5
 
 - GET: Returns all NFT's in contract
+
 EndPoint: https://thirdweb-nextjs-minting-1nhadqwxi-jongan69.vercel.app/api/getNfts
+
+
 ### Resources
 
 - [Official Thirdweb Docs](https://docs.thirdeb.com)
