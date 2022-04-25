@@ -2,12 +2,14 @@ import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import { ethers } from "ethers";
 
 export default async function mint(req, res){
+
+  
   const { mintToAddress, metadata } = req.body
 
   const sdk = new ThirdwebSDK(
     new ethers.Wallet(
       process.env.PRIVATE_KEY,
-      ethers.getDefaultProvider('https://rinkeby-light.eth.linkpool.io/'),
+      ethers.getDefaultProvider(process.env.NEXT_PUBLIC_RPC_URL),
     )
   );
   const editionAddress = process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS;

@@ -22,7 +22,7 @@ This project shows you how to make a Nextjs Endpoint for minting and getting NFT
 
 `
 .env.local:
-NEXT_PUBLIC_RPC_URL=https://rinkeby.infura.io/v3/
+NEXT_PUBLIC_RPC_URL="https://rinkeby-light.eth.linkpool.io/"
 PRIVATE_KEY=<Private Key of Wallet that signed Contract>
 NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=<thirdweb Edition Contract address>
 `

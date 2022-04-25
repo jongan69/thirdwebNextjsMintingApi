@@ -6,7 +6,7 @@ export default async function getNfts(req, res) {
   const sdk = new ThirdwebSDK(
     new ethers.Wallet(
       process.env.PRIVATE_KEY,
-      ethers.getDefaultProvider('https://rinkeby-light.eth.linkpool.io/')
+      ethers.getDefaultProvider(process.env.NEXT_PUBLIC_RPC_URL)
     )
   );
 
