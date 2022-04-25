@@ -28,7 +28,7 @@ NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=<thirdweb Edition Contract address>
 `
 ### API Calls
 
-- POST: Posts an NFT collection to 
+- POST: Posts an NFT collection to the contract
 
 {
     "image": {
