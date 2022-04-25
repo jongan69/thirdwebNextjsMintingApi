@@ -20,11 +20,16 @@ This project shows you how to make a Nextjs Endpoint for minting and getting NFT
 - `yarn install`
 - `yarn dev`
 
-`
+
 .env.local:
+
+`
 NEXT_PUBLIC_RPC_URL="https://rinkeby-light.eth.linkpool.io/"
+
 PRIVATE_KEY=<Private Key of Wallet that signed Contract>
+
 NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=<thirdweb Edition Contract address>
+
 `
 ### API Calls
 
@@ -66,13 +71,13 @@ Example Body:
 
 `
 
-EndPoint: https://thirdweb-nextjs-minting-1nhadqwxi-jongan69.vercel.app/api/mint
+EndPoint: https://thirdweb-nextjs-minting-api.vercel.app/api/mint
 
 Etherscan: https://rinkeby.etherscan.io/address/0x4f29FbeE650c3eA006a174547a2F4e74c02a2Be5
 
 - GET: Returns all NFT's in contract
 
-EndPoint: https://thirdweb-nextjs-minting-1nhadqwxi-jongan69.vercel.app/api/getNfts
+EndPoint: https://thirdweb-nextjs-minting-api.vercel.app/api/getNfts
 
 
 ### Resources
