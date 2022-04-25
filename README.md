@@ -30,20 +30,30 @@ NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=<thirdweb Edition Contract address>
 
 - POST: Posts an NFT collection to the contract
 
+`
 Example Body:  
 
 {
+    
     "image": {
+        
         "name": "Bed2",
+        
         "description": "No",
-        "image": "https://gateway.ipfscdn.io/ipfs/QmbSDPPMhEp5od6pi6syEtKotJjyjvopv9wS8rCYvNqnvp/0.png",
+       
+       "image": "https://gateway.ipfscdn.io/ipfs/QmbSDPPMhEp5od6pi6syEtKotJjyjvopv9wS8rCYvNqnvp/0.png",
+        
         "external_url": "https://gateway.ipfscdn.io/ipfs/QmbSDPPMhEp5od6pi6syEtKotJjyjvopv9wS8rCYvNqnvp/1.pdf",
+        
         "id": {
             "type": "BigNumber",
             "hex": "0x02"
         },
+        
         "uri": "https://gateway.ipfscdn.io/ipfs/QmUa6bkpZRDyYWjugp4VvKLjgndkQNvcBuiqWSLdNJ7P9b/0",
-        "background_color": "",
+       
+       "background_color": "",
+        
         "attributes": [
             {
                 "value": "soft",
@@ -52,7 +62,7 @@ Example Body:
         ]
     }
 }
-
+`
 
 EndPoint: https://thirdweb-nextjs-minting-1nhadqwxi-jongan69.vercel.app/api/mint
 
