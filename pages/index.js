@@ -8,6 +8,7 @@ export default function Home() {
     <div>
       {address ? (
         <>
+          <p>The backend is in the api folder</p>
           <button onClick={disconnectWallet}>Disconnect Wallet</button>
           <p>Your address: {address}</p>
         </>
