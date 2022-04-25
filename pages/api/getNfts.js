@@ -9,7 +9,6 @@ export default async function getNfts(req, res) {
       ethers.getDefaultProvider(process.env.NEXT_PUBLIC_RPC_URL)
     )
   );
-
   const editionAddress = process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS;
   const editionDrop = sdk.getEditionDrop(editionAddress)
 

@@ -3,8 +3,8 @@ import { ethers } from "ethers";
 
 export default async function mint(req, res){
 
-  
-  const { mintToAddress, metadata } = req.body
+  // Address of the wallet you want to mint the NFT to & Supply
+  const { mintToAddress, metadata, supply } = req.body
 
   const sdk = new ThirdwebSDK(
     new ethers.Wallet(
@@ -17,21 +17,23 @@ export default async function mint(req, res){
   console.log('DATA RECIECVED WAS: ', mintToAddress, metadata)
 
     try {
-      // Address of the wallet you want to mint the NFT to
       const metadataWithSupply = {
         metadata,
-        supply: 1000, // The number of this NFT you want to mint
+        supply, 
       }
       
-      const tx = await edition.mintTo(mintToAddress, metadataWithSupply);
-      const receipt = tx.receipt; // the transaction receipt
-      const tokenId = tx.id; // the id of the NFT minted
-      const nft = await tx.data(); // (optional) fetch details of minted NFT(nft);
-      console.log('DATA OUTPUT: ', receipt, tokenId, nft)
-
-      if (nft?.metadata.image) {
-        res.status(200).json({ image: nft?.metadata })
-      }
+      const tx = await edition.mintTo(mintToAddress, metadataWithSupply)
+      .then(async(tx) => {
+        const receipt = tx.receipt; // the transaction receipt
+        const tokenId = tx.id; // the id of the NFT minted
+        const nft = await tx.data(); // (optional) fetch details of minted NFT(nft);
+        console.log('DATA OUTPUT: ', receipt, tokenId, nft)
+        if (nft) {
+          res.status(200).json({ NFT_MINTED: nft?.metadata })
+        } else {
+          res.status(200).json({ message: `Nft is being minted to contract ${process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS}` })
+        }
+      })
 
     } catch (error) {
       console.log(error);
