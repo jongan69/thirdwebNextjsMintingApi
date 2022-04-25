@@ -31,6 +31,7 @@ NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=<thirdweb Edition Contract address>
 - POST: Posts an NFT collection to the contract
 
 `
+
 Example Body:  
 
 {
@@ -62,6 +63,7 @@ Example Body:
         ]
     }
 }
+
 `
 
 EndPoint: https://thirdweb-nextjs-minting-1nhadqwxi-jongan69.vercel.app/api/mint
